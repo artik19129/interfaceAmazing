@@ -34,15 +34,6 @@ export enum STATES {
   EXISTS,
   CANCELED,
 }
-
-export interface Licence {
-  id: number;
-  type: TYPES;
-  state: STATES;
-  stateChangedAt: string;
-  nextTryAt: string| null;
-  cancelReason: string | null;
-}
 export interface Licence {
   id: number;
   type: TYPES;

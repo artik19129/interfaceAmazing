@@ -34,7 +34,7 @@ export class DocumentsComponent implements OnInit {
       id: 981800367815,
       categories: [TYPES.VEHICLES_B, TYPES.VEHICLES_D, TYPES.VEHICLES_FLY],
     });
-    this.showDocument('DRIVING-LICENSE');
+    this.showDocument('TECHNICAL_DATA_SHEET');
     // setInterval(() => {
     //   this.showDocument('TECHNICAL_DATA_SHEET');
     //   setTimeout(() => {
