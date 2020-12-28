@@ -1,0 +1,144 @@
+{
+  "extends": [
+    "plugin:@typescript-eslint/recommended",
+    "prettier"
+  ],
+  "globals": {
+    "mp": "writable"
+  },
+  "plugins": [
+    "@angular-eslint/eslint-plugin",
+    "@angular-eslint/eslint-plugin-template",
+    "@angular-eslint/template",
+    "simple-import-sort",
+    "import",
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "sourceType": "module",
+    "createDefaultProgram": true
+  },
+  "rules": {
+    "simple-import-sort/imports": [
+      "error",
+      {
+        "groups": [
+          [
+            "^\\u0000"
+          ],
+          ["^@?(?!mediu@nrwl/eslint-plugin-nxm-stories)\\w"],
+          ["^@medium-stories?\\w"],
+          [
+            "^[^.]"
+          ],
+          [
+            "^\\."
+          ]
+        ]
+      }
+    ],
+    "sort-imports": "off",
+    "import/first": "error",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "@angular-eslint/component-class-suffix":"error",
+    "@angular-eslint/component-selector":["error",{"type":"element","prefix":"app","style":"kebab-case"}],
+    "@angular-eslint/contextual-lifecycle":"error",
+    "@angular-eslint/directive-class-suffix":"error",
+    "@angular-eslint/directive-selector":["error",{"type":"attribute","prefix":"app","style":"camelCase"}],
+    "@angular-eslint/no-conflicting-lifecycle":"error",
+    "@angular-eslint/no-host-metadata-property":"error",
+    "@angular-eslint/no-input-rename":"error",
+    "@angular-eslint/no-inputs-metadata-property":"error",
+    "@angular-eslint/no-output-native":"error",
+    "@angular-eslint/no-output-on-prefix":"error",
+    "@angular-eslint/no-output-rename":"error",
+    "@angular-eslint/no-outputs-metadata-property":"error",
+    "@angular-eslint/template/banana-in-box":"off",
+    "@angular-eslint/template/no-negated-async":"off",
+    "@angular-eslint/use-lifecycle-interface":"error",
+    "@angular-eslint/use-pipe-transform-interface":"error",
+    "linebreak-style": ["error", "windows"],
+    "class-methods-use-this": "off",
+    "no-useless-constructor": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "import/no-named-as-default": "off",
+    "import/named": "off",
+    "no-use-before-define": "off",
+    "no-continue": "off",
+    "no-bitwise": "off",
+    "no-restricted-syntax": "off",
+    "spaced-comment": [
+      "error",
+      "always",
+      {
+        "line": {
+          "exceptions": [
+            "-",
+            "+",
+            "/"
+          ],
+          "markers": [
+            "=",
+            "/",
+            "!"
+          ]
+        },
+        "block": {
+          "exceptions": [
+            "-",
+            "+"
+          ],
+          "markers": [
+            "=",
+            "!"
+          ],
+          "balanced": true
+        }
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files":["*.ts","*.tsx"],
+      "rules":{
+        "no-dupe-class-members":"off",
+        "lines-between-class-members":"off",
+        "@typescript-eslint/no-dupe-class-members":["error"],
+        "prettier/prettier":[
+          "error",
+          {
+            "endOfLine":"auto",
+            "singleQuote":true,
+            "trailingComma":"all",
+            "printWidth":120,
+            "tabWidth":2,
+            "bracketSpacing":true,
+            "semi":true,
+            "parser":"typescript",
+            "useTabs":false,
+            "arrowParens":"avoid"
+          }
+        ]
+      }
+    },
+    {
+      "files":["*.component.ts"],
+      "parser":"@typescript-eslint/parser",
+      "parserOptions":{"ecmaVersion":2020,"sourceType":"module"},
+      "plugins":["@angular-eslint/template"],
+      "processor":"@angular-eslint/template/extract-inline-html"
+    },
+    {
+      "files":["*.spec.ts"],
+      "rules":{
+        "@typescript-eslint/no-unsafe-call":"off",
+        "@typescript-eslint/no-unsafe-assignmentall":"off",
+        "@typescript-eslint/no-unsafe-member-access":"off",
+        "@typescript-eslint/no-unsafe-assignment":"off"
+      }
+    }
+  ]
+}

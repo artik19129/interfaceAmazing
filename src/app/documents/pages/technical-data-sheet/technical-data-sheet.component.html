@@ -1,0 +1,55 @@
+<div class="main">
+  <div class="exit">
+    <img src="../../../../assets/images/technical-data-sheet/exit.svg">
+  </div>
+  <div class="line"></div>
+  <header>
+    <img class="header__logo" src="../../../../assets/images/technical-data-sheet/usa_logo_eagle.svg" width="116" height="116">
+    <div class="header__text">
+      <h1>UNITED STATES OF AMERICA</h1>
+      <h1 class="header__text__end">
+        <span><img src="../../../../assets/images/technical-data-sheet/star.svg"></span>
+        ТЕХПАСПОРТ Т/C
+        <span><img src="../../../../assets/images/technical-data-sheet/star.svg"></span>
+      </h1>
+    </div>
+  </header>
+  <div class="body">
+    <div class="body__header">
+      <div class="body__header__name">
+        <h1>{{ service.name }}</h1>
+      </div>
+      <div class="body__header__number">
+        {{ service.number }}
+      </div>
+      <div class="trusted">
+        <p>
+          {{ service.trusted.length }} доверенных
+          <img src="../../../../assets/images/technical-data-sheet/question.svg">
+        </p>
+      </div>
+    </div>
+    <div class="info">
+      <div class="info__type">
+        <h3>Тип Т/C</h3>
+        <p>{{ service.type }}</p>
+      </div>
+      <div class="info__dateOfIssue">
+        <h3>Дата приобритения</h3>
+        <p>{{ service.dateOfIssue }}</p>
+      </div>
+      <div class="info__owner">
+        <h3>Владелец</h3>
+        <p>{{ service.owner }}</p>
+      </div>
+      <div class="taxDate">
+        <h3>Налог оплачен до</h3>
+        <p>{{ service.taxDate }}</p>
+      </div>
+    </div>
+    <div class="colors">
+      <div class="color" style="background-color: rgb({{service.color1[0]}}, {{service.color1[1]}}, {{service.color1[2]}});"><h3>Цвет 1</h3></div>
+      <div class="color" style="background-color: rgb({{service.color2[0]}}, {{service.color2[1]}}, {{service.color2[2]}});"><h3>Цвет 2</h3></div>
+    </div>
+  </div>
+</div>

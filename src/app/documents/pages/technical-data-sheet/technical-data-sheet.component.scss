@@ -1,0 +1,143 @@
+@import "src/app/documents/constants/technical-data-sheet";
+.main {
+  width: $width;
+  height: $height;
+  background-color: $background-color;
+  border-radius: 32px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-image: url(~src/assets/images/technical-data-sheet/back-data-sheet.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .exit {
+    position: absolute;
+    right: 0;
+    margin: 20px;
+    cursor: pointer;
+  }
+
+  .line {
+    width: 23px;
+    height: 300px;
+    background-image: url(~src/assets/images/technical-data-sheet/line.svg);
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+    margin-top: 60px;
+  }
+
+  header {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    .header__logo  {
+      margin: 20px;
+    }
+
+    .header__text{
+      font-family: Monrope, sans-serif;
+      text-align: center;
+      margin: auto 65px;
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .header__text__end {
+        font-size: 23px;
+        margin-top: 0;
+        letter-spacing: 7px;
+      }
+    }
+  }
+
+  .body {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    grid-template-areas:
+      "header ."
+      "info colors";
+    margin-left: 75px;
+
+    .body__header {
+      grid-area: header;
+      display: inline-flex;
+      flex-wrap: wrap;
+      font-family: Monrope, sans-serif;
+      font-weight: 700;
+      font-size: 15px;
+
+      .body__header__number {
+        margin: 16px;
+        width: 98px;
+        height: 36px;
+        background: linear-gradient(98deg, #4A81EC 0%, #F03C38 100%);
+        border-radius: 2px;
+        font-size: 18px;
+        color: #FFFFFF;
+        text-align: center;
+        line-height: 36px;
+      }
+
+      .trusted {
+        font-family: Monrope, sans-serif;
+        font-weight: 500;
+        font-size: 20px;
+        margin-top: -35px;
+
+        img {
+          cursor: pointer;
+          position: absolute;
+          margin-left: 10px;
+        }
+      }
+    }
+    .info {
+      grid-area: info;
+      display: grid;
+      grid-template-columns: 3fr 3fr;
+      grid-template-areas:
+        "type dateOfIssue"
+        "owner taxDate";
+      font-family: Monrope, sans-serif;
+
+      h3 {
+        font-size: 18px;
+        margin: 0;
+        font-weight: 600;
+      }
+      p {
+        margin-top: 5px;
+        font-weight: 400;
+      }
+    }
+
+    .colors {
+      grid-area: colors;
+      display: inline-flex;
+      align-self: center;
+      margin: 0 auto;
+
+      .color {
+        width: 55px;
+        height: 55px;
+        background: black;
+        border: 5px solid #D7D7D7;
+        border-radius: 50px;
+        margin-right: 25px;
+        text-align: center;
+        font-family: Morope, sans-serif;
+        font-weight: 700;
+
+        h3 {
+          font-size: 16px;
+          margin-top: 75px;
+        }
+      }
+    }
+  }
+}
