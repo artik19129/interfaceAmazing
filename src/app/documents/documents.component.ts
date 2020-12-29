@@ -51,6 +51,10 @@ export class DocumentsComponent implements OnInit {
     // }, 2000);
   }
 
+  closeDocument(): void {
+    this.service.activeDocument = 'NONE';
+  }
+
   showDocument(name: ActiveDocument): void {
     this.service.activeDocument = name;
   }

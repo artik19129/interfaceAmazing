@@ -11,6 +11,7 @@
   background-image: url(~src/assets/images/driving-license/back-driving-license.svg);
   background-position: center;
   background-repeat: no-repeat;
+  background-position-x: 200px;
 
   .exit {
     position: absolute;
@@ -30,7 +31,7 @@
     .header__text{
       font-family: Manrope, sans-serif;
       text-align: center;
-      margin: auto 40px;
+      margin: auto 70px;
 
       h1 {
         margin-top: 0;

@@ -8,4 +8,4 @@ export class DocumentsService {
   constructor() {}
 }
 
-export type ActiveDocument = 'TECHNICAL_DATA_SHEET' | 'DRIVING-LICENSE';
+export type ActiveDocument = 'TECHNICAL_DATA_SHEET' | 'DRIVING-LICENSE' | 'NONE';
