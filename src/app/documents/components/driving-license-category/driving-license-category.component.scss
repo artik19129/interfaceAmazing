@@ -1,0 +1,118 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+   h3 {
+    font-family: Manrope, sans-serif;
+    text-align: right;
+    height: 24px;
+    margin: 0;
+    font-size: 21px;
+  }
+
+  & > h3 {
+    color: #9E9E9E;
+  }
+  img {
+    height: 24px;
+    padding-left: 20px;
+  }
+  .category {
+    width: 100px;
+  }
+
+  .category_icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .mat-icon ::ng-deep {
+      width: 30px;
+      height: 30px;
+      path {
+        fill: #9E9E9E;
+      }
+    }
+
+    label {
+      display: none;
+      position: absolute;
+      height: 0;
+      width: 0;
+      font-size: 0;
+      text-align: center;
+    }
+
+    #info_m:hover+label {
+      font-family: Manrope, sans-serif;
+      display: block;
+      top: 40px;
+      font-size: 14px;
+      width: 480px;
+      height: 165px;
+      background-color: #ED3A27;
+      border-radius: 5px;
+      z-index: 10;
+      text-align: left;
+      color: #FFFFFF;
+
+      .corner {
+        top: -15px;
+        left: 47%;
+        position: absolute;
+        z-index: -1;
+        width: 0;
+        height: 0;
+        border-radius: 10px;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 30px solid #ED3A27;
+      }
+
+      .info_m {
+        padding: 10px 66px 28px 31px;
+
+        .info_m:first-child {
+          font-weight: 700;
+          font-size: 16px;
+        }
+        em {
+          font-weight: 800;
+        }
+
+        .info_m__main {
+          display: grid;
+          grid-template-columns: 0.8fr 1fr;
+
+          h3 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 18px;
+            text-align: left;
+          }
+          p {
+            margin: 0;
+            font-weight: 400;
+            font-size: 18px;
+          }
+        }
+      }
+    }
+  }
+
+  &.green {
+    .category_icon .mat-icon ::ng-deep path {
+      fill: #27AE60;
+    }
+    & > h3 {
+      color: #27AE60;
+    }
+  }
+  &.red {
+    .category_icon .mat-icon ::ng-deep path {
+        fill: #E74C3C;
+    }
+    & > h3 {
+      color: #E74C3C;
+    }
+  }
+}

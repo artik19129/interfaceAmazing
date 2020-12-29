@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import { Licence, TYPES } from '../interfaces/licenses.interface';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -7,12 +9,12 @@ export class DrivingLicenseService {
   public name: string;
   public gender: string;
   public id: number;
-  public categories: TYPES[];
+  public licenses: DrivingLicences;
 
   loadData(data: IData): void {
     this.name = data.name;
     this.id = data.id;
-    this.categories = data.categories;
+    this.licenses = data.licenses;
 
     if (data.gender) {
       this.gender = 'Мужской';
@@ -22,36 +24,13 @@ export class DrivingLicenseService {
   }
 }
 
+type DrivingLicences = {
+  [k in TYPES]?: Licence | null;
+};
+
 export interface IData {
   name: string;
   gender: 0 | 1;
   id: number;
-  categories: TYPES[];
+  licenses: DrivingLicences;
 }
-
-export enum STATES {
-  NOT_EXISTS,
-  EXISTS,
-  CANCELED,
-}
-export interface Licence {
-  id: number;
-  type: TYPES;
-  state: STATES;
-  stateChangedAt: Date;
-  nextTryAt: Date | null;
-  cancelReason: string | null;
-}
-
-export enum TYPES {
-  VEHICLES_D = 0,
-  VEHICLES_M = 1,
-  VEHICLES_B = 2,
-  VEHICLES_FLY = 3,
-  VEHICLES_BOATS = 4,
-  WEAPONS = 5,
-}
-
-type CharacterLicences = {
-  [k in TYPES]: Licence | null;
-};

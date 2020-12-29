@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 
 import { ActiveDocument, DocumentsService } from './documents.service';
-import { DrivingLicenseService, TYPES } from './shared/services/driving-license.service';
+import { Licenses } from './shared/constants/test-licenses';
+import { TYPES } from './shared/interfaces/licenses.interface';
+import { DrivingLicenseService } from './shared/services/driving-license.service';
 import { TechnicalDataSheetService } from './shared/services/technical-data-sheet.service';
 
 @Component({
@@ -32,9 +34,15 @@ export class DocumentsComponent implements OnInit {
       name: 'Robin Walker',
       gender: 1,
       id: 981800367815,
-      categories: [TYPES.VEHICLES_B, TYPES.VEHICLES_D, TYPES.VEHICLES_FLY],
+      licenses: {
+        [TYPES.VEHICLES_BOATS]: Licenses[TYPES.VEHICLES_BOATS],
+        [TYPES.VEHICLES_B]: Licenses[TYPES.VEHICLES_B],
+        [TYPES.VEHICLES_M]: Licenses[TYPES.VEHICLES_M],
+        [TYPES.VEHICLES_D]: Licenses[TYPES.VEHICLES_D],
+        [TYPES.VEHICLES_FLY]: Licenses[TYPES.VEHICLES_FLY],
+      },
     });
-    this.showDocument('TECHNICAL_DATA_SHEET');
+    this.showDocument('DRIVING-LICENSE');
     // setInterval(() => {
     //   this.showDocument('TECHNICAL_DATA_SHEET');
     //   setTimeout(() => {

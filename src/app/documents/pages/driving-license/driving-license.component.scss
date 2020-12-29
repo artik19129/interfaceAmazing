@@ -1,4 +1,4 @@
-@import "src/app/documents/constants/driving-license";
+@import "../../shared/styles/driving-license";
 .main {
   width: $width;
   height: $height;
@@ -49,7 +49,6 @@
     display: flex;
     .info {
       display: grid;
-      grid-template-columns: 2fr;
       grid-template-areas:
         "name"
         "sex"
@@ -60,7 +59,7 @@
       h3 {
         font-size: 18px;
         margin: 0;
-        font-weight: 600;
+        font-weight: 700;
       }
       p {
         margin-top: 5px;
@@ -69,12 +68,10 @@
     }
 
     .categories {
-      h3 {
-        font-family: Manrope, sans-serif;
-      }
-      .category_d {
-        grid-area: categoryes;
-      }
+      margin-left: auto;
+      margin-right: 60px;
+      display: grid;
+      grid-template-columns: 1fr;
     }
   }
 }
