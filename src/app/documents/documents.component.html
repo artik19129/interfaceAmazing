@@ -1,2 +1,9 @@
-<app-technical-data-sheet *ngIf="service.activeDocument === 'TECHNICAL_DATA_SHEET'"></app-technical-data-sheet>
-<app-driving-license *ngIf="service.activeDocument === 'DRIVING-LICENSE'"></app-driving-license>
+<app-technical-data-sheet
+  *ngIf="activeDocument === 'TECHNICAL_DATA_SHEET'"
+  (closeEmitter)="closeDocuments()"
+></app-technical-data-sheet>
+
+<app-driving-license
+  *ngIf="activeDocument === 'DRIVING_LICENSE'"
+  (closeEmitter)="closeDocuments()"
+></app-driving-license>

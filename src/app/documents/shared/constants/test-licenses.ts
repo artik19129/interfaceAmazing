@@ -1,6 +1,6 @@
 import { CharacterLicences, STATES, TYPES } from '../interfaces/licenses.interface';
 
-export const Licenses: CharacterLicences = {
+export const characterLicences: CharacterLicences = {
   [TYPES.VEHICLES_B]: {
     id: 1,
     cancelReason: null,

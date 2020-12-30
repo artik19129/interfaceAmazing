@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { Licence, TYPES } from '../interfaces/licenses.interface';
+import { DrivingLicenceLoadData, DrivingLicences } from '../interfaces/driving-licence.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +11,7 @@ export class DrivingLicenseService {
   public id: number;
   public licenses: DrivingLicences;
 
-  loadData(data: IData): void {
+  loadData(data: DrivingLicenceLoadData): void {
     this.name = data.name;
     this.id = data.id;
     this.licenses = data.licenses;
@@ -22,15 +22,4 @@ export class DrivingLicenseService {
       this.gender = 'Женский';
     }
   }
-}
-
-type DrivingLicences = {
-  [k in TYPES]?: Licence | null;
-};
-
-export interface IData {
-  name: string;
-  gender: 0 | 1;
-  id: number;
-  licenses: DrivingLicences;
 }

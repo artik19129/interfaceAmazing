@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { format } from 'date-fns';
 
+import { TechnicalDataSheetLoadData } from '../interfaces/technical-data-sheet.interface';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -15,7 +17,7 @@ export class TechnicalDataSheetService {
   public color1: number | [number, number, number];
   public color2: number | [number, number, number];
 
-  loadData(data: IData): void {
+  loadData(data: TechnicalDataSheetLoadData): void {
     this.name = data.name;
     this.number = data.number;
     this.type = data.type;
@@ -26,16 +28,4 @@ export class TechnicalDataSheetService {
     this.color1 = data.color1;
     this.color2 = data.color2;
   }
-}
-
-export interface IData {
-  name: string;
-  number: string;
-  trusted: string[];
-  type: string;
-  owner: string;
-  dateOfIssue: string;
-  taxDate: string;
-  color1: number | [number, number, number];
-  color2: number | [number, number, number];
 }
