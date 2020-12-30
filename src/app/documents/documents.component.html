@@ -7,3 +7,8 @@
   *ngIf="activeDocument === 'DRIVING_LICENSE'"
   (closeEmitter)="closeDocuments()"
 ></app-driving-license>
+
+<app-passport
+  *ngIf="activeDocument === 'PASSPORT'"
+  (closeEmitter)="closeDocuments()"
+></app-passport>

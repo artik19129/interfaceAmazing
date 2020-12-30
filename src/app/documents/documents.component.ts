@@ -7,6 +7,8 @@ import { TYPES } from './shared/interfaces/licenses.interface';
 import { TechnicalDataSheetLoadData } from './shared/interfaces/technical-data-sheet.interface';
 import { DrivingLicenseService } from './shared/services/driving-license.service';
 import { TechnicalDataSheetService } from './shared/services/technical-data-sheet.service';
+import { PassportService } from './shared/services/passport.service';
+import { PassportLoadData } from './shared/interfaces/passport';
 
 @Component({
   selector: 'app-documents',
@@ -19,9 +21,18 @@ export class DocumentsComponent implements OnInit {
   constructor(
     protected technicalDataSheetService: TechnicalDataSheetService,
     protected drivingLicenseService: DrivingLicenseService,
+    protected passportService: PassportService,
   ) {}
 
   ngOnInit(): void {
+    // this.openPassportDocument({
+    //   name: 'Robin Walker',
+    //   gender: 1,
+    //   citizenship: 'UNITED STATES OF AMERICA',
+    //   dateOfBirth: '2020-12-26T22:16:42.481Z',
+    //   marriedName: 'Kristina Kovalevskaya',
+    //   characterId: 1,
+    // });
     // this.openTechnicalDataSheetDocument({
     //   name: 'Robin Walker',
     //   number: 'L303X',
@@ -33,19 +44,18 @@ export class DocumentsComponent implements OnInit {
     //   color1: [222, 196, 11],
     //   color2: [222, 157, 12],
     // });
-
-    this.openDrivingLicenceDocument({
-      name: 'Robin Walker',
-      gender: 1,
-      id: 981800367815,
-      licenses: {
-        [TYPES.VEHICLES_BOATS]: characterLicences[TYPES.VEHICLES_BOATS],
-        [TYPES.VEHICLES_B]: characterLicences[TYPES.VEHICLES_B],
-        [TYPES.VEHICLES_M]: characterLicences[TYPES.VEHICLES_M],
-        [TYPES.VEHICLES_D]: characterLicences[TYPES.VEHICLES_D],
-        [TYPES.VEHICLES_FLY]: characterLicences[TYPES.VEHICLES_FLY],
-      },
-    });
+    // this.openDrivingLicenceDocument({
+    //   name: 'Robin Walker',
+    //   gender: 1,
+    //   id: 981800367815,
+    //   licenses: {
+    //     [TYPES.VEHICLES_BOATS]: characterLicences[TYPES.VEHICLES_BOATS],
+    //     [TYPES.VEHICLES_B]: characterLicences[TYPES.VEHICLES_B],
+    //     [TYPES.VEHICLES_M]: characterLicences[TYPES.VEHICLES_M],
+    //     [TYPES.VEHICLES_D]: characterLicences[TYPES.VEHICLES_D],
+    //     [TYPES.VEHICLES_FLY]: characterLicences[TYPES.VEHICLES_FLY],
+    //   },
+    // });
   }
 
   closeDocuments(): void {
@@ -59,6 +69,11 @@ export class DocumentsComponent implements OnInit {
   private openDrivingLicenceDocument(data: DrivingLicenceLoadData): void {
     this.drivingLicenseService.loadData(data);
     this.showDocument('DRIVING_LICENSE');
+  }
+
+  private openPassportDocument(data: PassportLoadData): void {
+    this.passportService.loadData(data);
+    this.showDocument('PASSPORT');
   }
 
   private openTechnicalDataSheetDocument(data: TechnicalDataSheetLoadData): void {
