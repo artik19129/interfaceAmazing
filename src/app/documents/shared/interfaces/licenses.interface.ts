@@ -10,6 +10,7 @@ export interface Licence {
   stateChangedAt: string;
   nextTryAt: string | null;
   cancelReason: string | null;
+  endDate: string | null;
 }
 
 export enum TYPES {

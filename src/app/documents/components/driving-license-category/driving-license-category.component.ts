@@ -20,6 +20,7 @@ export class DrivingLicenseCategoryComponent implements OnInit {
   public categoryIcon: string;
   public stateChangedAt: string;
   public nextTryAt: string;
+  public endDate: string;
   public isExists: boolean;
   public isCanceled: boolean;
   constructor() {}
@@ -41,6 +42,10 @@ export class DrivingLicenseCategoryComponent implements OnInit {
 
     if (this.licence.nextTryAt) {
       this.nextTryAt = format(new Date(this.licence.nextTryAt), 'dd.MM.yyyy');
+    }
+
+    if (this.licence.endDate) {
+      this.endDate = format(new Date(this.licence.endDate), 'dd.MM.yyyy');
     }
   }
 

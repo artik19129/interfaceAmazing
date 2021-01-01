@@ -44,18 +44,18 @@ export class DocumentsComponent implements OnInit {
     //   color1: [222, 196, 11],
     //   color2: [222, 157, 12],
     // });
-    // this.openDrivingLicenceDocument({
-    //   name: 'Robin Walker',
-    //   gender: 1,
-    //   id: 981800367815,
-    //   licenses: {
-    //     [TYPES.VEHICLES_BOATS]: characterLicences[TYPES.VEHICLES_BOATS],
-    //     [TYPES.VEHICLES_B]: characterLicences[TYPES.VEHICLES_B],
-    //     [TYPES.VEHICLES_M]: characterLicences[TYPES.VEHICLES_M],
-    //     [TYPES.VEHICLES_D]: characterLicences[TYPES.VEHICLES_D],
-    //     [TYPES.VEHICLES_FLY]: characterLicences[TYPES.VEHICLES_FLY],
-    //   },
-    // });
+    this.openDrivingLicenceDocument({
+      name: 'Robin Walker',
+      gender: 1,
+      id: 981800367815,
+      licenses: {
+        [TYPES.VEHICLES_BOATS]: characterLicences[TYPES.VEHICLES_BOATS],
+        [TYPES.VEHICLES_B]: characterLicences[TYPES.VEHICLES_B],
+        [TYPES.VEHICLES_M]: characterLicences[TYPES.VEHICLES_M],
+        [TYPES.VEHICLES_D]: characterLicences[TYPES.VEHICLES_D],
+        [TYPES.VEHICLES_FLY]: characterLicences[TYPES.VEHICLES_FLY],
+      },
+    });
   }
 
   closeDocuments(): void {

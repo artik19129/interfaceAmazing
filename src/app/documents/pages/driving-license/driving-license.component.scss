@@ -45,6 +45,10 @@
         font-size: 23px;
         margin-top: 0;
         letter-spacing: 6px;
+
+        span {
+          vertical-align: middle;
+        }
       }
     }
   }
@@ -57,11 +61,11 @@
         "name"
         "sex"
         "id";
-      margin-top: 40px;
-      margin-left: 75px;
+      margin-top: 20px;
+      margin-left: 60px;
       font-family: Manrope, sans-serif;
+      font-size: 18px;
       h3 {
-        font-size: 18px;
         margin: 0;
         font-weight: 700;
       }

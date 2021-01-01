@@ -4,15 +4,30 @@
   <label for="info_m" *ngIf="isCanceled">
     <div class="corner"></div>
     <div class="info_m">
-      <p>Вы лишены прав на вождение данной категории транспорта <em>до {{ nextTryAt }}</em></p>
+      <p>Вы лишены прав на вождение данной категории транспорта <b>до {{ nextTryAt }}</b></p>
       <div class="info_m__main">
         <div class="date_end">
-          <h3>ДАТА ЛИШЕНИЯ</h3>
+          <h3>Дата лишения</h3>
           <p>{{ stateChangedAt }}</p>
         </div>
         <div class="reason">
-          <h3>ПРИЧИНА</h3>
+          <h3>Причина</h3>
           <p>{{ licence.cancelReason }}</p>
+        </div>
+      </div>
+    </div>
+  </label>
+  <label for="info_m" *ngIf="isExists">
+    <div class="corner_green"></div>
+    <div class="info_m_green">
+      <div class="info_m__main">
+        <div class="date_end">
+          <h3>Дата получения</h3>
+          <p>{{ stateChangedAt }}</p>
+        </div>
+        <div class="reason">
+          <h3>Дата окончания</h3>
+          <p>{{ endDate }}</p>
         </div>
       </div>
     </div>
