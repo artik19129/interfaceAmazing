@@ -4,11 +4,11 @@ import { characterLicences } from './shared/constants/test-licenses';
 import { ActiveDocument } from './shared/interfaces/documents.interface';
 import { DrivingLicenceLoadData } from './shared/interfaces/driving-licence.interface';
 import { TYPES } from './shared/interfaces/licenses.interface';
+import { PassportLoadData } from './shared/interfaces/passport';
 import { TechnicalDataSheetLoadData } from './shared/interfaces/technical-data-sheet.interface';
 import { DrivingLicenseService } from './shared/services/driving-license.service';
-import { TechnicalDataSheetService } from './shared/services/technical-data-sheet.service';
 import { PassportService } from './shared/services/passport.service';
-import { PassportLoadData } from './shared/interfaces/passport';
+import { TechnicalDataSheetService } from './shared/services/technical-data-sheet.service';
 
 @Component({
   selector: 'app-documents',
